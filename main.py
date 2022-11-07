@@ -32,7 +32,7 @@ def string_compliment(list_for_compliment):
         for check_string in list_for_compliment:
             if correct_element1 == check_string[0] and correct_element2 == check_string[1]:
                 count = 0
-                for i in correct_string:
+                while count < len(list_for_compliment[0]):
                     if len(correct_string[count]) < 1 and len(check_string[count]) >= 1:
                         correct_string[count] = check_string[count]
                     count += 1
@@ -42,8 +42,13 @@ def string_compliment(list_for_compliment):
 def remove_duplicates(list_for_remove_duplicates):
     temp = []
     for temp_string in list_for_remove_duplicates:
-        if temp_string not in temp:
-            temp.append(temp_string)
+        temp1 = []
+        count_fields = 0
+        while count_fields < len(list_for_remove_duplicates[0]):
+            temp1.append(temp_string[count_fields])
+            count_fields += 1
+        if temp1 not in temp:
+            temp.append(temp1)
     list_for_remove_duplicates = temp
     return list_for_remove_duplicates
 
